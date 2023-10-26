@@ -10,7 +10,7 @@
         padding: 0;
         font-family: cursive;
         box-sizing: border-box;
-        background:#CCCAC7;
+        
     }
     img {
             width: 64px;
@@ -25,21 +25,35 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%); /* Center the overlay */
-            width: 300px; /* Maximum width */
-            height: 400px; /* Maximum height */
-            background: rgb(255, 255, 255); /* Semi-transparent background */
+            width: 300px; 
+            height: 400px; 
+            background: rgb(255, 255, 255); 
             z-index: 1; /* Ensures it's displayed over other elements */
         }
 
+            .background-image {
+            background-image: url('6114100.jpg');
+            background-size: cover; /*adjust this to control how the image is displayed */
+            width: 100%;
+            height: 1500px; 
+        }
+
+
 
         /* Styling for the content inside the overlay box */
+        .formclass {
+            background: white;
+            margin-left: 10px;
+            margin-top:10px;
+
+        }
         .overlay-content {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 50px; /* Adjust the width as needed */
-            height: 50px; /* Adjust the height as needed */
+            width: 50px; 
+            height: 50px; 
             background: white;
             border: 1px solid #ccc;
             text-align: center;
@@ -55,23 +69,26 @@
     }
 
     .flex-box {
-        flex-basis: 150px; 
-        flex-grow: 1; 
-        height: 150px;
-        background: linear-gradient(purple, red);
-        color: white;
-        font-size: 25px;
-        text-align: center;
-        line-height: 200px;
-        border-radius: 20px;
-        margin: 10px;
+    display: flex;
+    font-size: 25px;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: flex-start; 
+    padding: 10px; 
+    background-color: #f0f0f0; 
+    border-radius: 10px; 
+    border: 2px solid #ccc; 
+    margin: 5px; 
+    min-width: 150px; /* Adjust the minimum width */
+    min-height: 120px;
+    
     }
 
     .wide-box {
         flex-basis: 100%; 
         height: 150px;
         background: #CCCAC7;
-        color: white;
+        color: black;
         font-size: 22px;
         text-align: center;
         line-height: 200px;
@@ -91,36 +108,42 @@
         text-align: right;
         margin-right: 20px;
     }
+    /* complete button style*/
+    .completedesign {
+
+    bottom:10px;
+    background-color: #4CAF50; 
+    color: white; 
+    border: none; 
+    padding: 5px 10px; 
+    cursor: pointer;
+    font-size: 22px; 
+    border-radius: 5px; 
+    bottom: 80%;
+    }
+
+    .completedesign:hover {
+        background-color: #45a049; 
+    }
     </style>
 </head>
 <body>
+    <div class="background-image">
     <div class="flex-container">
         <div class="overlay" id="overlay">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta laudantium temporibus, porro voluptatem vero error dolore, odio sunt, maiores similique culpa explicabo. Architecto quibusdam delectus soluta repudiandae maxime nostrum dolor!
+            <form class="formclass" id="habit-form">
+                <label for="habit">HABIT</label>
+                <input type="text" name="habit" id="habit" required>
+                <input type="submit" value="Submit">
+            </form>
         </div>
-        <div class="wide-box">
+        <div class="wide-box" id="wide-box">
             <p id="date" class="left"></p>
             <img id="icon" src="circle-plus-solid.svg" alt="Add icon">
             <p id="time" class="right"></p>
         </div>
-        <div id="box1" class="flex-box">
-            Box1
-        </div>
-        <div class="flex-box">
-            Box2
-        </div>
-        <div class="flex-box">
-            Box3
-        </div>
-        <div class="flex-box">
-            Box4
-        </div>
-        <div class="flex-box">
-            Box5
-        </div>
-        <div class="flex-box">
-            Box6
-        </div>
+        <!--Every box is created here thru scripts-->
+        
     </div>
     <script>
         // Create a Date object
@@ -149,16 +172,51 @@
         var iconElement = document.getElementById("icon");
         var box1Element = document.getElementById("box1");
     
-            iconElement.addEventListener("click", function () {
-        // Change the text of Box1 to BoxNew1
-        box1Element.innerText = "BoxNew1";
+            iconElement.addEventListener("click", function (event) {
+        
+        event.preventDefault();
+        
         var overlay = document.getElementById("overlay");
         overlay.style.display = (overlay.style.display === "block") ? "none" : "block";
 
         
     });
+    //creating complete button
+    function createCompleteButton() {
+        const completeButton = document.createElement("button");
+        completeButton.textContent = "Complete";
+        completeButton.classList.add("completedesign");
+        completeButton.addEventListener("click", function () {
+            // Handle the "Complete" button click here
+            alert("Task marked as complete!");
+        });
+        return completeButton;
+    }
+
+    //on submit event
+    document.querySelector('#habit-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const habit = this.querySelector('[name="habit"]').value;
+
+            // new div with the class "flex-box" and the inputted text
+            const newFlexBox = document.createElement("div");
+            newFlexBox.classList.add("flex-box");
+            newFlexBox.innerText = habit+"\n";
+            
+
+            const completeButton = createCompleteButton();
+            newFlexBox.appendChild(completeButton);
+
+            //  new div below the overlay div
+            const widebox = document.querySelector('#wide-box');
+            widebox.parentNode.insertBefore(newFlexBox, widebox.nextSibling);
+        });
+
+        
+
     
 
     </script>
+    </div>
 </body>
 </html>
