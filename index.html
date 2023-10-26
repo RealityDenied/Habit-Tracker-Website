@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: cursive;
+        box-sizing: border-box;
+        background:#CCCAC7;
+    }
+
+    .flex-container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .flex-box {
+        flex-basis: 150px; /* Initial width for flex-box */
+        flex-grow: 1; /* Allow flex-box to grow and fill available space */
+        height: 150px;
+        background: linear-gradient(purple, red);
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        line-height: 200px;
+        border-radius: 20px;
+        margin: 10px;
+    }
+
+    .wide-box {
+        flex-basis: 100%; /* Full width for wide-box */
+        height: 150px;
+        background: #31F416;
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        line-height: 200px;
+        border-radius: 20px;
+        margin: 10px;
+    }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="wide-box">
+            <p id="date-time"></p>
+        </div>
+        <div class="flex-box">
+            Box1
+        </div>
+        <div class="flex-box">
+            Box2
+        </div>
+        <div class="flex-box">
+            Box3
+        </div>
+        <div class="flex-box">
+            Box4
+        </div>
+        <div class="flex-box">
+            Box5
+        </div>
+        <div class="flex-box">
+            Box6
+        </div>
+    </div>
+    <script>
+        // Create a Date object
+        var currentDate = new Date();
+
+        // Get the current day, month, and date
+        var options = { weekday: 'short', month: 'short', day: 'numeric' };
+        var formattedDate = currentDate.toLocaleDateString('en-US', options);
+
+        // Get the current time in 12-hour format without seconds
+        var hours = currentDate.getHours();
+        var minutes = currentDate.getMinutes();
+        var ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12;
+        var formattedTime = hours + ':' + (minutes < 10 ? '0' : '') + minutes + ' ' + ampm;
+
+        // Display the formatted date and time on the web page
+        var formattedDateTimeElement = document.getElementById("date-time");
+        formattedDateTimeElement.innerHTML = formattedDate + " - " + formattedTime;
+    </script>
+</body>
+</html>
