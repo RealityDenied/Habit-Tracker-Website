@@ -115,16 +115,31 @@
     background-color: #4CAF50; 
     color: white; 
     border: none; 
-    padding: 5px 10px; 
+    padding: 10px 20px; 
+    text-align: center;
+    text-decoration: none;
     cursor: pointer;
-    font-size: 22px; 
+    font-size: 18px; 
     border-radius: 5px; 
-    bottom: 80%;
+    margin-top: 10px;
+    
     }
+    .complete-button {
+    background-color: #c0c0e0;
+    color: blue; 
+    border: none; 
+    padding: 10px 20px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px;
+    border-radius: 5px; 
+    cursor: pointer; 
+    margin-top: 10px; 
+}
 
-    .completedesign:hover {
-        background-color: #45a049; 
-    }
+
+    
     </style>
 </head>
 <body>
@@ -182,16 +197,25 @@
         
     });
     //creating complete button
-    function createCompleteButton() {
+        function createCompleteButton() {
         const completeButton = document.createElement("button");
         completeButton.textContent = "Complete";
-        completeButton.classList.add("completedesign");
+        completeButton.classList.add("complete-button");
         completeButton.addEventListener("click", function () {
-            // Handle the "Complete" button click here
-            alert("Task marked as complete!");
+            if (completeButton.textContent === "Complete") {
+                completeButton.textContent = "COMPLETED";
+                completeButton.classList.remove("complete-button");
+                completeButton.classList.add("completedesign");
+            } else {
+                completeButton.textContent = "Complete";
+                completeButton.classList.add("complete-button");
+
+                
+            }
         });
         return completeButton;
     }
+
 
     //on submit event
     document.querySelector('#habit-form').addEventListener('submit', function(event) {
@@ -201,7 +225,7 @@
             // new div with the class "flex-box" and the inputted text
             const newFlexBox = document.createElement("div");
             newFlexBox.classList.add("flex-box");
-            newFlexBox.innerText = habit+"\n";
+            newFlexBox.innerText = habit;
             
 
             const completeButton = createCompleteButton();
