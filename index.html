@@ -19,6 +19,33 @@
             margin-top: 50px;
         }
 
+        .overlay {
+            display: none; /* Initially hidden */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Center the overlay */
+            width: 300px; /* Maximum width */
+            height: 400px; /* Maximum height */
+            background: rgb(255, 255, 255); /* Semi-transparent background */
+            z-index: 1; /* Ensures it's displayed over other elements */
+        }
+
+
+        /* Styling for the content inside the overlay box */
+        .overlay-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px; /* Adjust the width as needed */
+            height: 50px; /* Adjust the height as needed */
+            background: white;
+            border: 1px solid #ccc;
+            text-align: center;
+            padding: 20px;
+        }
+
     .flex-container {
         width: 100%;
         height: auto;
@@ -45,7 +72,7 @@
         height: 150px;
         background: #CCCAC7;
         color: white;
-        font-size: 25px;
+        font-size: 22px;
         text-align: center;
         line-height: 200px;
         border-radius: 20px;
@@ -54,26 +81,29 @@
         justify-content: space-between;
     }
     .left {
-        flex: 1; /* Makes it take up available space on the left */
+        /*flex: 1; /* Makes it take up available space on the left */
         text-align: left;
-        margin-left: 40px;
+        margin-left: 10px;
     }
     
     .right {
-        flex: 1; /* Makes it take up available space on the right */
+        /*flex: 1; /* Makes it take up available space on the right */
         text-align: right;
-        margin-right: 40px;
+        margin-right: 20px;
     }
     </style>
 </head>
 <body>
     <div class="flex-container">
+        <div class="overlay" id="overlay">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta laudantium temporibus, porro voluptatem vero error dolore, odio sunt, maiores similique culpa explicabo. Architecto quibusdam delectus soluta repudiandae maxime nostrum dolor!
+        </div>
         <div class="wide-box">
             <p id="date" class="left"></p>
-            <img src="circle-plus-solid.svg" alt="Add icon">
+            <img id="icon" src="circle-plus-solid.svg" alt="Add icon">
             <p id="time" class="right"></p>
         </div>
-        <div class="flex-box">
+        <div id="box1" class="flex-box">
             Box1
         </div>
         <div class="flex-box">
@@ -114,6 +144,21 @@
     
         formattedDateElement.innerHTML = formattedDate;
         formattedTimeElement.innerHTML = formattedTime;
+
+        // Add a click event to the SVG icon
+        var iconElement = document.getElementById("icon");
+        var box1Element = document.getElementById("box1");
+    
+            iconElement.addEventListener("click", function () {
+        // Change the text of Box1 to BoxNew1
+        box1Element.innerText = "BoxNew1";
+        var overlay = document.getElementById("overlay");
+        overlay.style.display = (overlay.style.display === "block") ? "none" : "block";
+
+        
+    });
+    
+
     </script>
 </body>
 </html>
