@@ -172,10 +172,13 @@
     }
 
     .progress {
-    background-color: grey;
+    background-color: rgb(159, 95, 219);
     border-radius: 20px;
     height: 30px;
     width: 300px;
+    margin-top: 10px;
+    
+    margin-bottom: 30px;
     }
 
     .progress-done {
@@ -184,16 +187,18 @@
         justify-content: center;
         background-image: repeating-linear-gradient(
             to left,
-            #0546e0,
-            #1172f9,
-            #4892f9
+            #04af7f,
+            #24f1b7b5,
+            #60f4cab5
         );
-        box-shadow: 0 5px 5px -6px #0546e0, 0 3px 7px #1172f9;
+        box-shadow: 0 5px 5px -6px #60f4cab5, 0 3px 7px #60f4cab5;
         border-radius: 20px;
         color: #fff;
         height: 100%;
-        width: 90%;
+        width: 0;
         transition: width 1s ease 0.3s; /* Corrected transition property */
+        
+        
     }
 
 
@@ -221,7 +226,7 @@
             <img id="icon" src="icons8-plus-100.png" alt="Add icon">
             <p id="time" class="right"></p>
         </div>
-        <div class="progress">
+        <div class="progress" id="progress">
             <div class="progress-done"></div>
         </div>
         
@@ -229,6 +234,8 @@
         
     </div>
     <script>
+        let i=0;
+        let j=0;
         // Create a Date object
         var currentDate = new Date();
     
@@ -271,10 +278,14 @@
         completeButton.classList.add("complete-button");
         completeButton.addEventListener("click", function () {
             if (completeButton.textContent === "Complete") {
+                i++;
+                changeWidth();
                 completeButton.textContent = "COMPLETED";
                 completeButton.classList.remove("complete-button");
                 completeButton.classList.add("completedesign");
             } else {
+                i--;
+                changeWidth();
                 completeButton.textContent = "Complete";
                 completeButton.classList.add("complete-button");
 
@@ -287,6 +298,7 @@
 
     //on submit event
     document.querySelector('#habit-form').addEventListener('submit', function(event) {
+            j++;
 
             changeWidth();
 
@@ -303,7 +315,7 @@
             newFlexBox.appendChild(completeButton);
 
             //  new div below the overlay div
-            const widebox = document.querySelector('#wide-box');
+            const widebox = document.querySelector('#progress');
             widebox.parentNode.insertBefore(newFlexBox, widebox.nextSibling);
 
             const habitInput = document.getElementById("habit");
@@ -325,12 +337,15 @@
         });
 
         const progress =document.querySelector(".progress-done")
-        let finalValue=30;
-        let max=50;
+        
         function changeWidth(){
+            if(j!=0){
+                progress.style.width = `${(i / j) * 100}%`;
+            progress.innerText= `${Math.ceil((i / j) *100)}%`;
 
-            progress.style.width = `${(finalValue / max) * 100}%`;
-            progress.innerText= `${Math.ceil((finalValue / max) *100)}%`;
+            }
+
+            
         }
         
         
