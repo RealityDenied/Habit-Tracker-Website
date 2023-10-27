@@ -13,25 +13,16 @@ http://www.aveloft.com/portfolio/habit-tracker-website/
 
 MOBILE VIEW - Create a Habit Card
 
-![Screenshot 2023-10-27 215008](https://github.com/RealityDenied/Habit-Tracker-Website/assets/145967694/1358f2fe-5721-4207-a886-f4ec0b86c5f2)
+![Screenshot_20231027_224003_Chrome](https://github.com/RealityDenied/Habit-Tracker-Website/assets/145967694/c0a27758-207b-419a-9ab5-ef9c45882d70)
 
 MOBILE VIEW - Your Habit Cards
 
-![image](https://github.com/RealityDenied/Habit-Tracker-Website/assets/145967694/0687b75d-a0fb-41b0-9f48-a5c83de21251)
+![Screenshot_20231027_224126_Chrome](https://github.com/RealityDenied/Habit-Tracker-Website/assets/145967694/fca6c29b-27f6-4ca0-b772-b6a203b2ddb0)
 
 TABLET VIEW -
 
-![image](https://github.com/RealityDenied/Habit-Tracker-Website/assets/145967694/b582ff49-0626-45f4-9c09-d0e4dd38a377)
+![Screenshot_20231027_224215_Chrome](https://github.com/RealityDenied/Habit-Tracker-Website/assets/145967694/17c6f9aa-b3ba-4aa2-90d1-1838c4ba3e3e)
 
 DESKTOP PC VIEW -
 
 ![image](https://github.com/RealityDenied/Habit-Tracker-Website/assets/145967694/c33c27a0-bf77-46fc-8fa9-2e15024d050f)
-
-
-
-
-
-
-
-
-
