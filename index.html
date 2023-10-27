@@ -4,6 +4,7 @@
     <title>Your Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    
     <style>
     * {
         margin: 0;
@@ -247,7 +248,14 @@
         </div>
 
     </div>
-    <script>
+    <script type="module">
+        import confetti from 'https://cdn.skypack.dev/canvas-confetti';
+
+        function celebration(){
+            confetti();
+
+        }
+
         let i=0;
         let j=0;
         // Create a Date object
@@ -294,6 +302,7 @@
             if (completeButton.textContent === "Complete") {
                 i++;
                 changeWidth();
+                celebration();
                 completeButton.textContent = "COMPLETED";
                 completeButton.classList.remove("complete-button");
                 completeButton.classList.add("completedesign");
