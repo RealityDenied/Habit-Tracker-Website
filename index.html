@@ -26,8 +26,8 @@
             left: 50%;
             transform: translate(-50%, -50%); /* Center the overlay */
             width: 300px; 
-            height: 400px; 
-            background: rgb(255, 255, 255); 
+            height: 200px; 
+            background: rgb(126, 38, 226); 
             z-index: 1; /* Ensures it's displayed over other elements */
         }
 
@@ -44,16 +44,20 @@
         .formclass {
     text-align: center; 
     padding: 20px; 
-    background-color: #f0f0f0; 
+    background-color: #e01c9b; 
+    background-image: url('311.jpg');
+    
     border-radius: 10px; 
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     height: 200px;
+    color:#000000;
     }
 
 .formclass label {
     font-size: 18px; 
     display: block; 
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
+     
 }
 
 .formclass input[type="text"] {
@@ -67,6 +71,7 @@
 
 .formclass input[type="submit"] {
     background-color: #007BFF; 
+    background-image: url('212.jpg');
     color: white; 
     padding: 10px 20px; 
     font-size: 18px; 
@@ -94,6 +99,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        
     }
 
     .flex-box {
@@ -110,7 +116,7 @@
     margin: 5px; 
     min-width: 150px; /* Adjust the minimum width */
     min-height: 120px;
-    color: rgb(0, 0, 0);
+    color: rgb(5, 57, 50);
     
     }
 
@@ -120,7 +126,7 @@
         
         
         background-color: rgba(155, 24, 236, 0.164);
-        color: black;
+        
         font-size: 22px;
         text-align: center;
         line-height: 200px;
@@ -179,6 +185,7 @@
     margin-top: 10px;
     
     margin-bottom: 30px;
+    
     }
 
     .progress-done {
@@ -213,7 +220,7 @@
         
         
         
-    <div class="flex-container">
+    <div class="flex-container" >
         <div class="overlay" id="overlay">
             <form class="formclass" id="habit-form">
                 <label for="habit">HABIT</label>
@@ -226,12 +233,19 @@
             <img id="icon" src="icons8-plus-100.png" alt="Add icon">
             <p id="time" class="right"></p>
         </div>
+        
         <div class="progress" id="progress">
             <div class="progress-done"></div>
         </div>
         
         <!--Every box is created here thru scripts-->
         
+    </div>
+    <div class="flex-container">
+        <div id="spawnbox">
+
+        </div>
+
     </div>
     <script>
         let i=0;
@@ -315,7 +329,7 @@
             newFlexBox.appendChild(completeButton);
 
             //  new div below the overlay div
-            const widebox = document.querySelector('#progress');
+            const widebox = document.querySelector('#spawnbox');
             widebox.parentNode.insertBefore(newFlexBox, widebox.nextSibling);
 
             const habitInput = document.getElementById("habit");
