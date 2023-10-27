@@ -169,7 +169,34 @@
     border-radius: 5px; 
     cursor: pointer; 
     margin-top: 10px; 
-}
+    }
+
+    .progress {
+    background-color: grey;
+    border-radius: 20px;
+    height: 30px;
+    width: 300px;
+    }
+
+    .progress-done {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: repeating-linear-gradient(
+            to left,
+            #0546e0,
+            #1172f9,
+            #4892f9
+        );
+        box-shadow: 0 5px 5px -6px #0546e0, 0 3px 7px #1172f9;
+        border-radius: 20px;
+        color: #fff;
+        height: 100%;
+        width: 90%;
+        transition: width 1s ease 0.3s; /* Corrected transition property */
+    }
+
+
 
 
     
@@ -177,6 +204,10 @@
 </head>
 <body>
     <div class="background-image">
+        
+        
+        
+        
     <div class="flex-container">
         <div class="overlay" id="overlay">
             <form class="formclass" id="habit-form">
@@ -190,6 +221,10 @@
             <img id="icon" src="icons8-plus-100.png" alt="Add icon">
             <p id="time" class="right"></p>
         </div>
+        <div class="progress">
+            <div class="progress-done"></div>
+        </div>
+        
         <!--Every box is created here thru scripts-->
         
     </div>
@@ -252,6 +287,9 @@
 
     //on submit event
     document.querySelector('#habit-form').addEventListener('submit', function(event) {
+
+            changeWidth();
+
             event.preventDefault();
             const habit = this.querySelector('[name="habit"]').value;
 
@@ -285,6 +323,16 @@
             // Transform the entered text to uppercase
             this.value = this.value.toUpperCase();
         });
+
+        const progress =document.querySelector(".progress-done")
+        let finalValue=30;
+        let max=50;
+        function changeWidth(){
+
+            progress.style.width = `${(finalValue / max) * 100}%`;
+            progress.innerText= `${Math.ceil((finalValue / max) *100)}%`;
+        }
+        
         
 
     
