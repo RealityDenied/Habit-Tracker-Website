@@ -42,11 +42,39 @@
 
         /* Styling for the content inside the overlay box */
         .formclass {
-            background: white;
-            margin-left: 10px;
-            margin-top:10px;
+    text-align: center; 
+    padding: 20px; 
+    background-color: #f0f0f0; 
+    border-radius: 10px; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    height: 200px;
+    }
 
-        }
+.formclass label {
+    font-size: 18px; 
+    display: block; 
+    margin-bottom: 10px; 
+}
+
+.formclass input[type="text"] {
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 15px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    font-size: 16px; 
+}
+
+.formclass input[type="submit"] {
+    background-color: #007BFF; 
+    color: white; 
+    padding: 10px 20px; 
+    font-size: 18px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
         .overlay-content {
             position: absolute;
             top: 50%;
@@ -149,7 +177,7 @@
             <form class="formclass" id="habit-form">
                 <label for="habit">HABIT</label>
                 <input type="text" name="habit" id="habit" required>
-                <input type="submit" value="Submit">
+                <input type="submit" value="CREATE">
             </form>
         </div>
         <div class="wide-box" id="wide-box">
@@ -234,8 +262,24 @@
             //  new div below the overlay div
             const widebox = document.querySelector('#wide-box');
             widebox.parentNode.insertBefore(newFlexBox, widebox.nextSibling);
-        });
 
+            const habitInput = document.getElementById("habit");
+            //const habitText= habitInput.value;
+            habitInput.value="";
+
+            //overlay removed
+            var overlay = document.getElementById("overlay");
+             overlay.style.display = (overlay.style.display === "block") ? "none" : "block";
+
+             
+        });
+        
+        const habitInput = document.getElementById("habit");
+        
+        habitInput.addEventListener("input", function () {
+            // Transform the entered text to uppercase
+            this.value = this.value.toUpperCase();
+        });
         
 
     
