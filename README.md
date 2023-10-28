@@ -9,7 +9,7 @@ This is a fully Responsive Website , better on Mobile.
 
 HOSTED ON MY WEBSITE -
 
-http://www.aveloft.com/portfolio/habit-tracker-website/
+https://www.aveloft.com/portfolio/habit-tracker-website/
 
 MOBILE VIEW - Create a Habit Card
 
