@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Your Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
+
+
     <style>
-    * {
-        margin: 0;
-        padding: 0;
-        font-family: cursive;
-        box-sizing: border-box;
-        
-    }
-    img {
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: cursive;
+            box-sizing: border-box;
+
+        }
+
+        img {
             width: 64px;
             height: 64px;
             display: block;
@@ -21,361 +23,365 @@
         }
 
         .overlay {
-            display: none; /* Initially hidden */
+            display: none;
+            /* Initially hidden */
             position: fixed;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%); /* Center the overlay */
-            width: 300px; 
-            height: 200px; 
-            background: rgb(126, 38, 226); 
-            z-index: 1; /* Ensures it's displayed over other elements */
+            transform: translate(-50%, -50%);
+            /* Center the overlay */
+            width: 300px;
+            height: 200px;
+            background: rgb(126, 38, 226);
+            z-index: 1;
+            /* Ensures it's displayed over other elements */
         }
 
-            .background-image {
+        .background-image {
             background-image: url('511.png');
-            background-size: cover; /*adjust this to control how the image is displayed */
+            background-size: cover;
+            /*adjust this to control how the image is displayed */
             width: 100%;
-            height: 800px; 
+            height: 800px;
         }
 
 
 
         /* Styling for the content inside the overlay box */
         .formclass {
-    text-align: center; 
-    padding: 20px; 
-    background-color: #e01c9b; 
-    background-image: url('311.jpg');
-    
-    border-radius: 10px; 
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    height: 200px;
-    color:#000000;
-    }
+            text-align: center;
+            padding: 20px;
+            background-color: #e01c9b;
+            background-image: url('311.jpg');
 
-.formclass label {
-    font-size: 18px; 
-    display: block; 
-    margin-bottom: 10px;
-     
-}
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            height: 200px;
+            color: #000000;
+        }
 
-.formclass input[type="text"] {
-    width: 100%; 
-    padding: 10px; 
-    margin-bottom: 15px; 
-    border: 1px solid #ccc; 
-    border-radius: 5px;
-    font-size: 16px; 
-}
+        .formclass label {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 10px;
 
-.formclass input[type="submit"] {
-    background-color: #007BFF; 
-    background-image: url('212.jpg');
-    color: white; 
-    padding: 10px 20px; 
-    font-size: 18px; 
-    border: none; 
-    border-radius: 5px; 
-    cursor: pointer; 
-}
+        }
+
+        .formclass input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .formclass input[type="submit"] {
+            background-color: #007BFF;
+            background-image: url('212.jpg');
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
         .overlay-content {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 50px; 
-            height: 50px; 
+            width: 50px;
+            height: 50px;
             background: white;
             border: 1px solid #ccc;
             text-align: center;
             padding: 20px;
         }
 
-    .flex-container {
-        width: 100%;
-        height: auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        
-    }
+        .flex-container {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
 
-    .flex-box {
-    display: flex;
-    font-size: 25px;
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: flex-start; 
-    padding: 10px; 
-    background-image: url('311.jpg');
-    
-    border-radius: 10px; 
-    border: 2px solid #ccc; 
-    margin: 5px; 
-    min-width: 150px; /* Adjust the minimum width */
-    min-height: 120px;
-    color: rgb(5, 57, 50);
-    
-    }
+        }
 
-    .wide-box {
-        flex-basis: 100%; 
-        height: 150px;
-        
-        
-        background-color: rgba(155, 24, 236, 0.164);
-        
-        font-size: 22px;
-        text-align: center;
-        line-height: 200px;
-        border-radius: 20px;
-        margin: 10px;
-        display: flex;
-        justify-content: space-between;
-        color:white;
-    }
-    .left {
-        /*flex: 1; /* Makes it take up available space on the left */
-        text-align: left;
-        margin-left: 10px;
-    }
-    
-    .right {
-        /*flex: 1; /* Makes it take up available space on the right */
-        text-align: right;
-        margin-right: 20px;
-    }
-    /* complete button style*/
-    .completedesign {
+        .flex-box {
+            display: flex;
+            font-size: 25px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 10px;
+            background-image: url('311.jpg');
 
-    bottom:10px;
-    background-color: #0aebabb5; 
-    color: white; 
-    border: none; 
-    padding: 10px 20px; 
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 18px; 
-    border-radius: 5px; 
-    margin-top: 10px;
-    
-    }
-    .complete-button {
-    background-image: url('212.jpg');
-    color:white; 
-    border: none; 
-    padding: 10px 20px; 
-    text-align: center; 
-    text-decoration: none; 
-    display: inline-block; 
-    font-size: 16px;
-    border-radius: 5px; 
-    cursor: pointer; 
-    margin-top: 10px; 
-    }
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            margin: 5px;
+            min-width: 150px;
+            /* Adjust the minimum width */
+            min-height: 120px;
+            color: rgb(5, 57, 50);
 
-    .progress {
-    background-color: rgb(159, 95, 219);
-    border-radius: 20px;
-    height: 30px;
-    width: 300px;
-    margin-top: 10px;
-    
-    margin-bottom: 30px;
-    
-    }
+        }
 
-    .progress-done {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-image: repeating-linear-gradient(
-            to left,
-            #04af7f,
-            #24f1b7b5,
-            #60f4cab5
-        );
-        box-shadow: 0 5px 5px -6px #60f4cab5, 0 3px 7px #60f4cab5;
-        border-radius: 20px;
-        color: #fff;
-        height: 100%;
-        width: 0;
-        transition: width 1s ease 0.3s; /* Corrected transition property */
-        
-        
-    }
+        .wide-box {
+            flex-basis: 100%;
+            height: 150px;
 
 
+            background-color: rgba(155, 24, 236, 0.164);
+
+            font-size: 22px;
+            text-align: center;
+            line-height: 200px;
+            border-radius: 20px;
+            margin: 10px;
+            display: flex;
+            justify-content: space-between;
+            color: white;
+        }
+
+        .left {
+            /*flex: 1; /* Makes it take up available space on the left */
+            text-align: left;
+            margin-left: 10px;
+        }
+
+        .right {
+            /*flex: 1; /* Makes it take up available space on the right */
+            text-align: right;
+            margin-right: 20px;
+        }
+
+        /* complete button style*/
+        .completedesign {
+
+            bottom: 10px;
+            background-color: #0aebabb5;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-top: 10px;
+
+        }
+
+        .complete-button {
+            background-image: url('212.jpg');
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .progress {
+            background-color: rgb(159, 95, 219);
+            border-radius: 20px;
+            height: 30px;
+            width: 300px;
+            margin-top: 10px;
+
+            margin-bottom: 30px;
+
+        }
+
+        .progress-done {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: repeating-linear-gradient(to left,
+                    #04af7f,
+                    #24f1b7b5,
+                    #60f4cab5);
+            box-shadow: 0 5px 5px -6px #60f4cab5, 0 3px 7px #60f4cab5;
+            border-radius: 20px;
+            color: #fff;
+            height: 100%;
+            width: 0;
+            transition: width 1s ease 0.3s;
+            /* Corrected transition property */
 
 
-    
+        }
     </style>
 </head>
+
 <body>
     <div class="background-image">
-        
-        
-        
-        
-    <div class="flex-container" >
-        <div class="overlay" id="overlay">
-            <form class="formclass" id="habit-form">
-                <label for="habit">HABIT</label>
-                <input type="text" name="habit" id="habit" required>
-                <input type="submit" value="CREATE">
-            </form>
-        </div>
-        <div class="wide-box" id="wide-box">
-            <p id="date" class="left"></p>
-            <img id="icon" src="icons8-plus-100.png" alt="Add icon">
-            <p id="time" class="right"></p>
-        </div>
-        
-        <div class="progress" id="progress">
-            <div class="progress-done"></div>
-        </div>
-        
-        <!--Every box is created here thru scripts-->
-        
-    </div>
-    <div class="flex-container">
-        <div id="spawnbox">
+
+
+
+
+        <div class="flex-container">
+            <div class="overlay" id="overlay">
+                <form class="formclass" id="habit-form">
+                    <label for="habit">HABIT</label>
+                    <input type="text" name="habit" id="habit" required>
+                    <input type="submit" value="CREATE">
+                </form>
+            </div>
+            <div class="wide-box" id="wide-box">
+                <p id="date" class="left"></p>
+                <img id="icon" src="icons8-plus-100.png" alt="Add icon">
+                <p id="time" class="right"></p>
+            </div>
+
+            <div class="progress" id="progress">
+                <div class="progress-done"></div>
+            </div>
+
+            <!--Every box is created here thru scripts-->
 
         </div>
+        <div class="flex-container">
+            <div id="spawnbox">
 
-    </div>
-    <script type="module">
-        import confetti from 'https://cdn.skypack.dev/canvas-confetti';
+            </div>
 
-        function celebration(){
-            confetti();
+        </div>
+        <script type="module">
+            import confetti from 'https://cdn.skypack.dev/canvas-confetti';
 
-        }
+            function celebration() {
+                confetti();
 
-        let i=0;
-        let j=0;
-        // Create a Date object
-        var currentDate = new Date();
-    
-        // Get the current day, month, and date
-        var options = { weekday: 'short', month: 'short', day: 'numeric' };
-        var formattedDate = currentDate.toLocaleDateString('en-US', options);
-    
-        // Get the current time in 12-hour format without seconds
-        var hours = currentDate.getHours();
-        var minutes = currentDate.getMinutes();
-        var ampm = hours >= 12 ? 'PM' : 'AM';
-        hours = hours % 12;
-        hours = hours ? hours : 12;
-        var formattedTime = hours + ':' + (minutes < 10 ? '0' : '') + minutes + ' ' + ampm;
-    
-        // Display the formatted date and time on the web page
-        var formattedDateElement = document.getElementById("date");
-        var formattedTimeElement = document.getElementById("time");
-    
-        formattedDateElement.innerHTML = formattedDate;
-        formattedTimeElement.innerHTML = formattedTime;
+            }
 
-        // Add a click event to the SVG icon
-        var iconElement = document.getElementById("icon");
-        var box1Element = document.getElementById("box1");
-    
+            let i = 0;
+            let j = 0;
+            // Create a Date object
+            var currentDate = new Date();
+
+            // Get the current day, month, and date
+            var options = { weekday: 'short', month: 'short', day: 'numeric' };
+            var formattedDate = currentDate.toLocaleDateString('en-US', options);
+
+            // Get the current time in 12-hour format without seconds
+            var hours = currentDate.getHours();
+            var minutes = currentDate.getMinutes();
+            var ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            var formattedTime = hours + ':' + (minutes < 10 ? '0' : '') + minutes + ' ' + ampm;
+
+            // Display the formatted date and time on the web page
+            var formattedDateElement = document.getElementById("date");
+            var formattedTimeElement = document.getElementById("time");
+
+            formattedDateElement.innerHTML = formattedDate;
+            formattedTimeElement.innerHTML = formattedTime;
+
+            // Add a click event to the SVG icon
+            var iconElement = document.getElementById("icon");
+            var box1Element = document.getElementById("box1");
+
             iconElement.addEventListener("click", function (event) {
-        
-        event.preventDefault();
-        
-        var overlay = document.getElementById("overlay");
-        overlay.style.display = (overlay.style.display === "block") ? "none" : "block";
 
-        
-    });
-    //creating complete button
-        function createCompleteButton() {
-        const completeButton = document.createElement("button");
-        completeButton.textContent = "Complete";
-        completeButton.classList.add("complete-button");
-        completeButton.addEventListener("click", function () {
-            if (completeButton.textContent === "Complete") {
-                i++;
-                changeWidth();
-                celebration();
-                completeButton.textContent = "COMPLETED";
-                completeButton.classList.remove("complete-button");
-                completeButton.classList.add("completedesign");
-            } else {
-                i--;
-                changeWidth();
+                event.preventDefault();
+
+                var overlay = document.getElementById("overlay");
+                overlay.style.display = (overlay.style.display === "block") ? "none" : "block";
+
+
+            });
+            //creating complete button
+            function createCompleteButton() {
+                const completeButton = document.createElement("button");
                 completeButton.textContent = "Complete";
                 completeButton.classList.add("complete-button");
+                completeButton.addEventListener("click", function () {
+                    if (completeButton.textContent === "Complete") {
+                        i++;
+                        changeWidth();
+                        celebration();
+                        completeButton.textContent = "COMPLETED";
+                        completeButton.classList.remove("complete-button");
+                        completeButton.classList.add("completedesign");
+                    } else {
+                        i--;
+                        changeWidth();
+                        completeButton.textContent = "Complete";
+                        completeButton.classList.add("complete-button");
 
-                
+
+                    }
+                });
+                return completeButton;
             }
-        });
-        return completeButton;
-    }
 
 
-    //on submit event
-    document.querySelector('#habit-form').addEventListener('submit', function(event) {
-            j++;
+            //on submit event
+            document.querySelector('#habit-form').addEventListener('submit', function (event) {
+                j++;
 
-            changeWidth();
+                changeWidth();
 
-            event.preventDefault();
-            const habit = this.querySelector('[name="habit"]').value;
+                event.preventDefault();
+                const habit = this.querySelector('[name="habit"]').value;
 
-            // new div with the class "flex-box" and the inputted text
-            const newFlexBox = document.createElement("div");
-            newFlexBox.classList.add("flex-box");
-            newFlexBox.innerText = habit;
-            
+                // new div with the class "flex-box" and the inputted text
+                const newFlexBox = document.createElement("div");
+                newFlexBox.classList.add("flex-box");
+                newFlexBox.innerText = habit;
 
-            const completeButton = createCompleteButton();
-            newFlexBox.appendChild(completeButton);
 
-            //  new div below the overlay div
-            const widebox = document.querySelector('#spawnbox');
-            widebox.parentNode.insertBefore(newFlexBox, widebox.nextSibling);
+                const completeButton = createCompleteButton();
+                newFlexBox.appendChild(completeButton);
+
+                //  new div below the overlay div
+                const widebox = document.querySelector('#spawnbox');
+                widebox.parentNode.insertBefore(newFlexBox, widebox.nextSibling);
+
+                const habitInput = document.getElementById("habit");
+                //const habitText= habitInput.value;
+                habitInput.value = "";
+
+                //overlay removed
+                var overlay = document.getElementById("overlay");
+                overlay.style.display = (overlay.style.display === "block") ? "none" : "block";
+
+
+            });
 
             const habitInput = document.getElementById("habit");
-            //const habitText= habitInput.value;
-            habitInput.value="";
 
-            //overlay removed
-            var overlay = document.getElementById("overlay");
-             overlay.style.display = (overlay.style.display === "block") ? "none" : "block";
+            habitInput.addEventListener("input", function () {
+                // Transform the entered text to uppercase
+                this.value = this.value.toUpperCase();
+            });
 
-             
-        });
-        
-        const habitInput = document.getElementById("habit");
-        
-        habitInput.addEventListener("input", function () {
-            // Transform the entered text to uppercase
-            this.value = this.value.toUpperCase();
-        });
+            const progress = document.querySelector(".progress-done")
 
-        const progress =document.querySelector(".progress-done")
-        
-        function changeWidth(){
-            if(j!=0){
-                progress.style.width = `${(i / j) * 100}%`;
-            progress.innerText= `${Math.ceil((i / j) *100)}%`;
+            function changeWidth() {
+                if (j != 0) {
+                    progress.style.width = `${(i / j) * 100}%`;
+                    progress.innerText = `${Math.ceil((i / j) * 100)}%`;
+
+                }
+
 
             }
 
-            
-        }
-        
-        
 
-    
 
-    </script>
+
+
+        </script>
     </div>
 </body>
+
 </html>
